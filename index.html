@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aviso de aprobación de ayuda</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <span class="mark" aria-hidden="true">A</span>
+      <div>
+        <strong>Almira Aldahab</strong>
+        <span>Programa de Ayuda Humanitaria</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="setup" class="card">
+      <h1>Crear aviso de aprobación de ayuda</h1>
+      <p class="lead">Escribe el nombre del beneficiario y el monto aprobado. El aviso se genera al instante y se puede imprimir o guardar como PDF.</p>
+
+      <label for="name">Nombre completo del beneficiario</label>
+      <input id="name" type="text" placeholder="María A. Pérez" />
+
+      <label for="amount">Monto aprobado (USD)</label>
+      <div class="money">
+        <span>$</span>
+        <input id="amount" type="number" min="0" inputmode="decimal" placeholder="2500" />
+      </div>
+
+      <p id="error" class="error" role="alert" hidden></p>
+      <button id="generate" class="primary">Generar aviso</button>
+    </section>
+
+    <section id="result" hidden>
+      <article class="card letter" aria-label="Aviso de aprobación de ayuda">
+        <div class="meta">
+          <span>Fecha: <span id="r-date"></span></span>
+          <span>Referencia: <span id="r-ref"></span></span>
+        </div>
+
+        <p class="status">Aprobado</p>
+        <h1>Estimado/a <span id="r-name"></span>, su solicitud de ayuda ha sido aprobada.</h1>
+
+        <div class="amount">
+          <span>Ayuda aprobada</span>
+          <strong id="r-amount"></strong>
+        </div>
+
+        <aside class="important">
+  <strong>Aviso importante.</strong> Para recibir su ayuda debe pagar la Legalización
+</aside>
+
+        <h2>Próximos pasos</h2>
+        <ol>
+          <li>Nuestro equipo se comunicará con usted para confirmar su identidad y los datos de entrega.</li>
+          <li>Una vez confirmados, su ayuda quedará programada para ser entregada.</li>
+          <li>Conserve este número de referencia para toda comunicación sobre su caso.</li>
+        </ol>
+
+        <p class="fine">Este aviso es emitido por el Programa de Ayuda Humanitaria de Almira Aldahab.Es emitido por la agencia del gobierno de EE. UU.</p>
+      </article>
+
+      <div class="actions">
+        <button id="print" class="primary">Imprimir o guardar como PDF</button>
+        <button id="reset" class="ghost">Nuevo aviso</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
